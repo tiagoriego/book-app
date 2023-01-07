@@ -1,0 +1,75 @@
+<custom-header></custom-header>
+<section class="mb-3 st-150">
+  <div class="p-3">
+    Book List
+  </div>
+  <div class="p-3 border-top border-bottom shadow-sm">
+    <input type="text" class="form-control" [(ngModel)]="title" placeholder="Search book">
+  </div>
+
+  <!-- list books -->
+
+  <div class="p-3 table-responsive">
+    <div class="border-bottom">
+      <p class="text-center"><small>Total <strong>{{books?.length}}</strong> book(s)</small></p>
+    </div>
+    <table class="table table-striped shadow-sm">
+      <thead>
+        <tr>
+          <th scope="col">Action</th>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col">Dimensions</th>
+          <th scope="col">Format</th>
+          <th scope="col">ISBN</th>
+          <th scope="col">Language</th>
+          <th scope="col">Paperback</th>
+          <th scope="col">Publication/Date</th>
+          <th scope="col">Publisher</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books | filter:title">
+          <td>
+            <button class="btn btn-outline-primary btn-sm m-1" (click)="editBook(book.id)">
+              <i class="bi bi-pen"></i>
+            </button>&nbsp;
+            <button class="btn btn-outline-danger btn-sm m-1" (click)="selectBook(book.title, book.id)" data-bs-toggle="modal" data-bs-target="#deleteBook">
+              <i class="bi bi-trash-fill"></i>
+            </button>
+          </td>
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.dimensions }}</td>
+          <td>{{ book.format }}</td>
+          <td>{{ book.isbn }}</td>
+          <td>{{ book.language }}</td>
+          <td>{{ book.paperback }}</td>
+          <td>{{ book.publication_date }}</td>
+          <td>{{ book.publisher }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- modal delete book -->
+
+<div class="modal fade" id="deleteBook" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Delete Book</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Do you really want to delete the book: <strong>{{ bookTitle }}</strong>?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteBook(bookId)">YES</button>
+      </div>
+    </div>
+  </div>
+</div>
+<custom-footer></custom-footer>
