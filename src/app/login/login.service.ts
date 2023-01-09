@@ -17,18 +17,21 @@ export class LoginService {
     this.keyUserToken = 'user_token'
   }
 
+  private getHttpOptions() {
+    return {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+  }
+
   authLogin(username: string, password: string) {
     const url = `${this.apiUrl}/login`;
     const body = {
       username: username,
       password: password
     }
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    };
-    return this.http.post(url, body, httpOptions)
+    return this.http.post(url, body, this.getHttpOptions())
   }
 
   getUser(): Observable<User> {

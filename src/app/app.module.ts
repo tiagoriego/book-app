@@ -14,6 +14,8 @@ import { FooterComponent } from './footer/footer.component'
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { NewBookComponent } from './new-book/new-book.component';
+import { UserComponent } from './user/user.component';
+import { UserPwdComponent } from './user-pwd/user-pwd.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { NewBookComponent } from './new-book/new-book.component';
     HeaderComponent,
     FooterComponent,
     EditBookComponent,
-    NewBookComponent
+    NewBookComponent,
+    UserComponent,
+    UserPwdComponent
   ],
   imports: [
     BrowserModule,
