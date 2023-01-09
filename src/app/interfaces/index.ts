@@ -22,3 +22,8 @@ export interface Book {
   publication_date: string;
   publisher: string;
 }
+
+export interface UserPassword {
+  old_password: string;
+  new_password: string;
+}

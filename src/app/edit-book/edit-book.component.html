@@ -1,9 +1,9 @@
 <custom-header></custom-header>
 <section class="mb-5 st-150">
   <div class="p-3">
-    Edit Book
+    <i class="bi bi-journal-check"></i> Edit Book
   </div>
-  
+
   <form [formGroup]="formBook" (submit)="onSaveBook(bookId)">
 
     <div class="p-3 border-top shadow-sm">
@@ -12,7 +12,8 @@
           <button type="submit" class="btn btn-success"><i class="bi bi-hand-thumbs-up"></i> Save</button>
         </div>
         <div class="col-auto">
-          <button type="button" class="btn btn-secondary" (click)="onCancel()"><i class="bi bi-x-circle"></i> Cancel</button>
+          <button type="button" class="btn btn-secondary" (click)="onCancel()"><i class="bi bi-x-circle"></i>
+            Cancel</button>
         </div>
       </div>
     </div>
@@ -23,58 +24,54 @@
         <i class="bi bi-bug-fill"></i> {{ error }}
       </div>
 
-      <div class="mb-3">
-        <div class="row">
-          <div class="col-lg-4">
-            <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control" formControlName="title" placeholder="title"
-              [class.is-invalid]="title?.invalid && (title?.dirty || title?.touched)">
-          </div>
-          <div class="col-lg-4">
-            <label for="author" class="form-label">Author</label>
-            <input type="text" class="form-control" formControlName="author" placeholder="author"
-              [class.is-invalid]="author?.invalid && (author?.dirty || author?.touched)">
-          </div>
-          <div class="col-lg-2">
-            <label for="dimensions" class="form-label">Dimensions</label>
-            <input type="text" class="form-control" formControlName="dimensions" placeholder="dimensions"
+      <div class="row">
+        <div class="col-lg-4 mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" formControlName="title" placeholder="title"
+            [class.is-invalid]="title?.invalid && (title?.dirty || title?.touched)">
+        </div>
+        <div class="col-lg-4 mb-3">
+          <label for="author" class="form-label">Author</label>
+          <input type="text" class="form-control" formControlName="author" placeholder="author"
+            [class.is-invalid]="author?.invalid && (author?.dirty || author?.touched)">
+        </div>
+        <div class="col-lg-2 mb-3">
+          <label for="dimensions" class="form-label">Dimensions</label>
+          <input type="text" class="form-control" formControlName="dimensions" placeholder="dimensions"
             [class.is-invalid]="dimensions?.invalid && (dimensions?.dirty || dimensions?.touched)">
-          </div>
-          <div class="col-lg-2">
-            <label for="format" class="form-label">Format</label>
-            <input type="text" class="form-control" formControlName="format" placeholder="format"
+        </div>
+        <div class="col-lg-2 mb-3">
+          <label for="format" class="form-label">Format</label>
+          <input type="text" class="form-control" formControlName="format" placeholder="format"
             [class.is-invalid]="format?.invalid && (format?.dirty || format?.touched)">
-          </div>
         </div>
       </div>
 
-      <div class="mb-3">
-        <div class="row">
-          <div class="col-lg-2">
-            <label for="isbn" class="form-label">ISBN</label>
-            <input type="text" class="form-control" formControlName="isbn" placeholder="isbn"
+      <div class="row">
+        <div class="col-lg-2 mb-3">
+          <label for="isbn" class="form-label">ISBN</label>
+          <input type="text" class="form-control" formControlName="isbn" placeholder="isbn"
             [class.is-invalid]="isbn?.invalid && (isbn?.dirty || isbn?.touched)">
-          </div>
-          <div class="col-lg-2">
-            <label for="language" class="form-label">Language</label>
-            <input type="text" class="form-control" formControlName="language" placeholder="language"
+        </div>
+        <div class="col-lg-2 mb-3">
+          <label for="language" class="form-label">Language</label>
+          <input type="text" class="form-control" formControlName="language" placeholder="language"
             [class.is-invalid]="language?.invalid && (language?.dirty || language?.touched)">
-          </div>
-          <div class="col-lg-2">
-            <label for="paperback" class="form-label">Paperback</label>
-            <input type="text" class="form-control" formControlName="paperback" placeholder="paperback"
+        </div>
+        <div class="col-lg-2 mb-3">
+          <label for="paperback" class="form-label">Paperback</label>
+          <input type="text" class="form-control" formControlName="paperback" placeholder="paperback"
             [class.is-invalid]="paperback?.invalid && (paperback?.dirty || paperback?.touched)">
-          </div>
-          <div class="col-lg-2">
-            <label for="publication_date" class="form-label">Publication/Date</label>
-            <input type="text" class="form-control" formControlName="publication_date" placeholder="publication/date"
+        </div>
+        <div class="col-lg-2 mb-3">
+          <label for="publication_date" class="form-label">Publication/Date</label>
+          <input type="text" class="form-control" formControlName="publication_date" placeholder="publication/date"
             [class.is-invalid]="publication_date?.invalid && (publication_date?.dirty || publication_date?.touched)">
-          </div>
-          <div class="col-lg-4">
-            <label for="publisher" class="form-label">Publisher</label>
-            <input type="text" class="form-control" formControlName="publisher" placeholder="publisher"
+        </div>
+        <div class="col-lg-4 mb-3">
+          <label for="publisher" class="form-label">Publisher</label>
+          <input type="text" class="form-control" formControlName="publisher" placeholder="publisher"
             [class.is-invalid]="publisher?.invalid && (publisher?.dirty || publisher?.touched)">
-          </div>
         </div>
       </div>
     </div>
@@ -85,7 +82,8 @@
           <button type="submit" class="btn btn-success"><i class="bi bi-hand-thumbs-up"></i> Save</button>
         </div>
         <div class="col-auto">
-          <button type="button" class="btn btn-secondary" (click)="onCancel()"><i class="bi bi-x-circle"></i> Cancel</button>
+          <button type="button" class="btn btn-secondary" (click)="onCancel()"><i class="bi bi-x-circle"></i>
+            Cancel</button>
         </div>
       </div>
     </div>

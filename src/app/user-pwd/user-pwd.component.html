@@ -1,0 +1,49 @@
+<custom-header></custom-header>
+<section class="mb-5 st-150">
+  <div class="p-3">
+    <i class="bi bi-file-lock"></i> Edit Password
+  </div>
+  <form [formGroup]="formUser" (submit)="onSaveUser()">
+
+    <div class="p-3 border-top shadow-sm">
+      <div class="row">
+        <div class="col-auto me-auto">
+          <button type="submit" class="btn btn-success"><i class="bi bi-hand-thumbs-up"></i> Save</button>
+        </div>
+        <div class="col-auto">
+          <button type="button" class="btn btn-secondary" (click)="onCancel()">
+            <i class="bi bi-x-circle"></i> Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- form user -->
+
+    <div class="p-3 col-lg-12 mx-auto border-top border-bottom">
+      <div *ngIf="success != ''" class="mb-3 alert alert-success">
+        <i class="bi bi-heart"></i> {{ success }}
+      </div>
+      <div *ngIf="error != ''" class="mb-3 alert alert-danger">
+        <i class="bi bi-bug-fill"></i> {{ error }}
+      </div>
+      <div class="row">
+        <div class="col-lg-4 mb-3">
+          <label for="title" class="form-label">Old password</label>
+          <input type="password" class="form-control" formControlName="oldPassword"
+            placeholder="Inform the old password"
+            [class.is-invalid]="oldPassword?.invalid && (oldPassword?.dirty || oldPassword?.touched)">
+        </div>
+        <div class="col-lg-4 mb-3">
+          <label for="title" class="form-label">New password</label>
+          <input type="password" class="form-control" formControlName="newPassword"
+            placeholder="Inform the new password"
+            [class.is-invalid]="newPassword?.invalid && (newPassword?.dirty || newPassword?.touched)">
+        </div>       
+      </div>
+    </div>
+
+    <!-- end form user -->
+  </form>
+</section>
+<custom-footer></custom-footer>

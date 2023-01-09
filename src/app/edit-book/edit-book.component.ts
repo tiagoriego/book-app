@@ -98,15 +98,15 @@ export class EditBookComponent implements OnInit {
 
   private fillFormBook(book: Book) {
     this.bookId = book.id;
-    this.formBook.get('title')?.setValue(book.title);
-    this.formBook.get('author')?.setValue(book.author);
-    this.formBook.get('dimensions')?.setValue(book.dimensions);
-    this.formBook.get('format')?.setValue(book.format);
-    this.formBook.get('isbn')?.setValue(book.isbn);
-    this.formBook.get('language')?.setValue(book.language);
-    this.formBook.get('paperback')?.setValue(book.paperback);
-    this.formBook.get('publication_date')?.setValue(book.publication_date);
-    this.formBook.get('publisher')?.setValue(book.publisher);
+    this.title?.setValue(book.title);
+    this.author?.setValue(book.author);
+    this.dimensions?.setValue(book.dimensions);
+    this.format?.setValue(book.format);
+    this.isbn?.setValue(book.isbn);
+    this.language?.setValue(book.language);
+    this.paperback?.setValue(book.paperback);
+    this.publication_date?.setValue(book.publication_date);
+    this.publisher?.setValue(book.publisher);
   }
 
   onSaveBook(bookId: string) {
