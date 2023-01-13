@@ -16,6 +16,7 @@ import { EditBookComponent } from './edit-book/edit-book.component';
 import { NewBookComponent } from './new-book/new-book.component';
 import { UserComponent } from './user/user.component';
 import { UserPwdComponent } from './user-pwd/user-pwd.component';
+import { LinkComponent } from './link/link.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { UserPwdComponent } from './user-pwd/user-pwd.component';
     EditBookComponent,
     NewBookComponent,
     UserComponent,
-    UserPwdComponent
+    UserPwdComponent,
+    LinkComponent
   ],
   imports: [
     BrowserModule,

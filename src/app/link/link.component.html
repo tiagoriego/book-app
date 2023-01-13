@@ -1,0 +1,104 @@
+<custom-header></custom-header>
+<section class="mb-5 st-150">
+  <div class="p-3">
+    <i class="bi bi-share"></i> Book Link
+  </div>
+
+  <div class="p-3 border-top shadow-sm">
+    <strong>{{ book?.title }}</strong> - {{ book?.author }}
+  </div>
+
+  <!-- form links -->
+
+  <form [formGroup]="formLink" (submit)="onSaveLink(bookId)">
+    <div class="p-3 mx-auto border-top border-bottom">
+
+      <div *ngIf="error != ''" class="mb-3 alert alert-danger">
+        <i class="bi bi-bug-fill"></i> {{ error }}
+      </div>
+
+      <div class="row g-3">
+        <div class="col-lg-2">
+          <input type="text" class="form-control" formControlName="name" placeholder="Name example: Amazon"
+            [class.is-invalid]="name?.invalid && (name?.dirty || name?.touched)">
+        </div>
+        <div class="col-lg-8">
+          <input type="text" class="form-control" formControlName="url"
+            placeholder="URL example: https://www.amazon.com.br/book-name"
+            [class.is-invalid]="url?.invalid && (url?.dirty || url?.touched)">
+        </div>
+        <div class="col-lg-2">
+          <button type="submit" class="btn btn-success">
+            <i class="bi bi-hand-thumbs-up"></i> Save
+          </button>&nbsp;
+          <button class="btn btn-secondary" (click)="onCancel()">
+            <i class="bi bi-x-circle"></i> Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- end form links -->
+
+  <!-- links -->
+  
+  <div class="mb-3 mt-3">
+    <p class="text-center"><small>Total <strong>{{links?.length}}</strong> links(s)</small></p>
+  </div>
+
+  <div class="p-3 border-top border-bottom shadow-sm">
+    <input type="text" class="form-control" [(ngModel)]="title" placeholder="Search Link">
+  </div>
+  
+  <div class="p-3 table-responsive">
+    
+    <table class="table table-striped shadow-sm">
+      <thead>
+        <tr>
+          <th scope="col">Action</th>
+          <th scope="col">Name</th>
+          <th scope="col">URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let link of links | filter:title ">
+          <td>
+            <button class="btn btn-outline-danger btn-sm m-1" (click)="onSelectLink(link.id)" data-bs-toggle="modal" data-bs-target="#deleteLink">
+              <i class="bi bi-trash-fill"></i>
+            </button>
+          </td>
+          <td>{{ link.name }}</td>
+          <td><a href="{{ link.url }}" target="_blank">{{ link.url }}</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <!-- end links -->
+
+</section>
+
+<!-- modal delete book -->
+
+<div class="modal fade" id="deleteLink" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Delete Link</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Do you really want to delete the link: <strong>{{ linkTitle }}</strong>?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="onDeleteLink(bookId, linkId)">YES</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--end modal delete book -->
+<custom-footer></custom-footer>

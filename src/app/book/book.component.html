@@ -9,14 +9,15 @@
 
   <!-- list books -->
 
-  <div class="p-3 table-responsive">
-    <div class="border-bottom">
-      <p class="text-center"><small>Total <strong>{{books?.length}}</strong> book(s)</small></p>
-    </div>
+  <div class="mb-3 mt-3 border-bottom">
+    <p class="text-center"><small>Total <strong>{{books?.length}}</strong> book(s)</small></p>
+  </div>
+
+  <div class="p-3 table-responsive">   
     <table class="table table-striped shadow-sm">
       <thead>
         <tr>
-          <th scope="col">Action</th>
+          <th scope="col" colspan="3">Action</th>
           <th scope="col">Title</th>
           <th scope="col">Author</th>
           <th scope="col">Dimensions</th>
@@ -33,7 +34,14 @@
           <td>
             <button class="btn btn-outline-primary btn-sm m-1" (click)="editBook(book.id)">
               <i class="bi bi-pen"></i>
-            </button>&nbsp;
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-outline-info btn-sm m-1" (click)="linkBook(book.id)">
+              <i class="bi bi-share"></i>
+            </button>
+          </td>
+          <td>
             <button class="btn btn-outline-danger btn-sm m-1" (click)="selectBook(book.title, book.id)" data-bs-toggle="modal" data-bs-target="#deleteBook">
               <i class="bi bi-trash-fill"></i>
             </button>

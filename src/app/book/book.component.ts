@@ -38,7 +38,7 @@ export class BookComponent implements OnInit {
   }
 
   editBook(bookId: string) {
-    this.router.navigate(['/book', bookId])
+    this.router.navigate(['/book', bookId]);
   }
 
   selectBook(bookTitle: string, bookId: string) {
@@ -57,5 +57,9 @@ export class BookComponent implements OnInit {
           console.log(error.message)
         }
       })
+  }
+
+  linkBook(bookId: string) {
+    this.router.navigate(['/book/link', bookId]);
   }
 }

@@ -30,3 +30,33 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Using API
 
 The application is using the API [Book API](https://github.com/tiagoriego/book-api)
+
+## Screenshots
+
+Login
+
+![Alt text](/screenshots/login.png "Form Login")
+
+Book List
+
+![Alt text](/screenshots/book_list.png "Form Book List")
+
+Book Link
+
+![Alt text](/screenshots/book_link.png "Form Book Link")
+
+New Book
+
+![Alt text](/screenshots/new_book.png "Form New Book")
+
+Book List
+
+![Alt text](/screenshots/book_list.png "Form Book List")
+
+Edit User
+
+![Alt text](/screenshots/user.png "Form User")
+
+Edit password
+
+![Alt text](/screenshots/password.png "Form Password")
