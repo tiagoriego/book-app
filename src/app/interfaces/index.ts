@@ -27,3 +27,10 @@ export interface UserPassword {
   old_password: string;
   new_password: string;
 }
+
+export interface Link {
+  id: string;
+  book_id: string;
+  name: string;
+  url: string;
+}
