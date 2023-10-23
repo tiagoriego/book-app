@@ -1,6 +1,6 @@
 # BOOK APP
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4 and [NodeJS](https://nodejs.org/pt-br/blog/release/v14.21.2) version v14.21.2..
 
 ## Development server
 
